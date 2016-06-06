@@ -1,7 +1,7 @@
-*/site/application/config/database.php*
 */logs/log-*.php
 !*/logs/index.html
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
 ftpsync.settings
+/site/application/config/database.php
