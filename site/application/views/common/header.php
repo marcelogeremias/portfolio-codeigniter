@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Marcelo Geremias">
-	<title><?php echo isset( $title ) ? $title : "Sem título"; ?></title>
+	<title><?php echo isset( $title ) ? $title : "Marcelo Geremias"; ?></title>
 
 	<!-- Bootstrap core CSS -->			
 	<link href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>"	rel="stylesheet">
@@ -56,16 +56,16 @@
 										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 											<ul class="nav navbar-nav">
 												<li class="active">
-													<a href="#">Home</a>
+													<a href="<?php echo base_url(); ?>">Home</a>
 												</li>
 												<li>
-													<a href="#">Trabalhos</a>
+													<a href="<?php echo base_url('trabalhos'); ?>">Trabalhos</a>
 												</li>
 												<li>
-													<a href="#">Formações</a>
+													<a href="<?php echo base_url('formacoes'); ?>">Formações</a>
 												</li>
 												<li>
-													<a href="#">Contato</a>
+													<a href="<?php echo base_url('contato'); ?>">Contato</a>
 												</li>
 											</ul>
 										</div><!-- /.navbar-collapse -->

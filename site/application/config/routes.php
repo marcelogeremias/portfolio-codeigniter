@@ -57,4 +57,7 @@ $route['trabalhos'] = 'trabalho/index';
 
 $route['formacoes'] = 'formacao/index';
 
+$route['contato'] = 'contato/index';
+$route['enviarContato'] = 'contato/enviarContato';
+
 $route['test/(:any)'] = 'test/$1';
