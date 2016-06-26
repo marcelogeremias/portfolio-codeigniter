@@ -55,4 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['trabalhos'] = 'trabalho/index';
 
+$route['formacoes'] = 'formacao/index';
+
 $route['test/(:any)'] = 'test/$1';

@@ -20,12 +20,11 @@
             return $query;
         }
 
-        function alterar($nome, $descricao, $email){
+        function alterar($nome, $descricao){
             $this->load->helper('array');
             $sobre = array(
                 'trab_nm' => $nome,
                 'trab_ds' => $descricao,
-                'trab_em' => $email
             );
             $this->db->update('lp_trabalhos', $sobre);
         }

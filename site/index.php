@@ -1,5 +1,6 @@
 <?php
 ini_set('date.timezone', 'America/Sao_Paulo');
+setlocale(LC_ALL, 'pt_BR');
 /**
  * CodeIgniter
  *
