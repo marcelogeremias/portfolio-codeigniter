@@ -1,8 +1,12 @@
 
-		<br><br>
-		<div id="footer"><em>&copy; <?php echo "LP II ". date('Y')?></em></div>
-		</div> <!-- fim do container -->	
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<p><?php echo date('Y'); ?> - Portfolio	desenvolvido por Marcelo Geremias</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
-
-<!-- class="navbar navbar-default navbar-fixed-bottom" -->
