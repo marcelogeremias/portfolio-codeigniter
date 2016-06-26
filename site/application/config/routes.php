@@ -53,4 +53,6 @@ $route['default_controller'] = 'usuario';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['trabalhos'] = 'trabalho/index';
+
 $route['test/(:any)'] = 'test/$1';
