@@ -60,4 +60,10 @@ $route['formacoes'] = 'formacao/index';
 $route['contato'] = 'contato/index';
 $route['enviarContato'] = 'contato/enviarContato';
 
+// Painel
+
+$route['painel'] = 'painel/index';
+$route['acessar'] = 'painel/login';
+$route['sair'] = 'painel/logout';
+
 $route['test/(:any)'] = 'test/$1';

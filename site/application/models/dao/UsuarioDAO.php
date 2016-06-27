@@ -20,6 +20,15 @@
             return $query->row_array();
         }
 
+        function login($email, $senha){
+            $this->db->select('usua_id, usua_nm, usua_ds, usua_em');
+            $this->db->from('lp_usuario');
+            $this->db->where('usua_em', $email);
+            $this->db->where('usua_sn', 'MD5("' . $senha . '")', FALSE);
+            $query = $this->db->get()->row_array();
+            return $query;
+        }
+
         function alterar($nome, $descricao, $email){
             $this->load->helper('array');
             $sobre = array(

@@ -16,5 +16,10 @@
 			$usuario = $this->UsuarioDAO->buscaUsuario();
 			return $usuario;
 		}
+
+		public function login($email, $senha){
+			$usuario = $this->UsuarioDAO->login($email, $senha);
+			return $usuario;
+		}
 	}
 ?>

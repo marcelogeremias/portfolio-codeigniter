@@ -31,7 +31,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
-								<a href="">Marcelo Geremias</a>
+								<a href="<?php echo base_url(); ?>">Marcelo Geremias</a>
 							</div>
 						</div>
 					</div>
