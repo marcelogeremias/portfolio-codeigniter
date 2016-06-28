@@ -8,6 +8,8 @@
 					<div class="descricao">
 						<?php echo $usuario["usua_ds"]; ?>
 					</div>
+
+					<a href="<?php echo base_url('pdf'); ?>">Baixar PDF</a>
 				</div>
 			</div>
 		</div>

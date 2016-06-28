@@ -53,6 +53,8 @@ $route['default_controller'] = 'usuario';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['pdf'] = 'usuario/gerarPDF';
+
 $route['trabalhos'] = 'trabalho/index';
 
 $route['formacoes'] = 'formacao/index';

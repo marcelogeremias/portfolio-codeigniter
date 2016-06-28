@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Marcelo Geremias">
+	<meta property="fb:app_id" content="251495978576094" />
+	<meta property="fb:admins" content="100002058366168"/>
 	<title><?php echo isset( $title ) ? $title : "Marcelo Geremias"; ?></title>
 
 	<!-- Bootstrap core CSS -->			
