@@ -16,5 +16,25 @@
 			$trabalho = $this->TrabalhoDAO->buscaTrabalhos();
 			return $trabalho;
 		}
+
+		public function detalheTrabalho($trabalho){
+			$trabalho = $this->TrabalhoDAO->detalheTrabalho($trabalho);
+			return $trabalho;
+		}
+
+		public function inserir($nome, $descricao){
+			$trabalho = $this->TrabalhoDAO->inserir($nome, $descricao);
+			return $trabalho;
+		}
+
+		public function atualizar($id, $nome, $descricao){
+			$trabalho = $this->TrabalhoDAO->atualizar($id, $nome, $descricao);
+			return $trabalho;
+		}
+
+		public function remover($id){
+			$trabalho = $this->TrabalhoDAO->remover($id);
+			return $trabalho;
+		}
 	}
 ?>

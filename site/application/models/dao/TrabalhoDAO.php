@@ -20,13 +20,40 @@
             return $query;
         }
 
-        function alterar($nome, $descricao){
+        function detalheTrabalho($trabalho){
+            $this->db->select('trab_id, trab_nm, trab_ds, trab_inse_dt');
+            $this->db->from('lp_trabalhos');
+            $this->db->where('trab_id', $trabalho);
+            $query = $this->db->get()->row_array();
+            return $query;
+        }
+
+        function inserir($nome, $descricao){
             $this->load->helper('array');
-            $sobre = array(
+            $args = array(
+                'trab_usua_id' => $this->session->userdata('u_id'),
                 'trab_nm' => $nome,
                 'trab_ds' => $descricao,
             );
-            $this->db->update('lp_trabalhos', $sobre);
+            $query = $this->db->insert('lp_trabalhos', $args);
+            return $query;
+        }
+
+        function atualizar($id, $nome, $descricao){
+            $this->load->helper('array');
+            $args = array(
+                'trab_nm' => $nome,
+                'trab_ds' => $descricao,
+            );
+            $this->db->where('trab_id', $id);
+            $query = $this->db->update('lp_trabalhos', $args);
+            return $query;
+        }
+
+        function remover($id){
+            $this->db->where('trab_id', $id);
+            $query = $this->db->delete('lp_trabalhos');
+            return $query;
         }
 
     }

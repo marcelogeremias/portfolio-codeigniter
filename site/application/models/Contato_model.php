@@ -20,5 +20,15 @@
 	        $mensagem = $this->input->post('mensagem');
 			$this->ContatoDAO->inserir($nome, $email, $assunto, $mensagem);
 		}
+
+		public function buscaContatos(){
+			$formacao = $this->ContatoDAO->buscaContatos();
+			return $formacao;
+		}
+
+		public function detalheContato($contato){
+			$contato = $this->ContatoDAO->detalheContato($contato);
+			return $contato;
+		}
 	}
 ?>

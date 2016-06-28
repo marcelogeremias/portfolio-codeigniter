@@ -66,4 +66,22 @@ $route['painel'] = 'painel/index';
 $route['acessar'] = 'painel/login';
 $route['sair'] = 'painel/logout';
 
+// Painel - Trabalhos
+$route['painel/trabalhos'] = 'trabalho/listaTrabalhos';
+$route['painel/trabalhos/form/(:num)'] = 'trabalho/atualizaTrabalho/$1';
+$route['painel/trabalhos/cadastrar'] = 'trabalho/confirmarCadastroTrabalho';
+$route['painel/trabalhos/atualizar'] = 'trabalho/confirmarAtualizacaoTrabalho';
+$route['painel/trabalhos/remover/(:num)'] = 'trabalho/removeTrabalho/$1';
+
+// Painel - Formações
+$route['painel/formacoes'] = 'formacao/listaFormacoes';
+$route['painel/formacoes/form/(:num)'] = 'formacao/atualizaFormacao/$1';
+$route['painel/formacoes/cadastrar'] = 'formacao/confirmarCadastroFormacao';
+$route['painel/formacoes/atualizar'] = 'formacao/confirmarAtualizacaoFormacao';
+$route['painel/formacoes/remover/(:num)'] = 'formacao/removeFormacao/$1';
+
+// Painel - Contatos
+$route['painel/contatos'] = 'contato/listaContatos';
+$route['painel/contatos/(:num)'] = 'contato/detalheContato/$1';
+
 $route['test/(:any)'] = 'test/$1';

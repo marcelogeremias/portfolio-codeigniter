@@ -20,6 +20,22 @@ class Contato extends MY_Controller {
         $this->load->view('common/footer');
 	}
 
+    public function listaContatos(){
+        $header['title'] = 'Contatos - Painel - Marcelo Geremias';
+        $this->load->view('painel/header', $header);
+        $data['contatos'] = $this->contato_model->buscaContatos();
+        $this->load->view('painel/contatos', $data);
+        $this->load->view('painel/footer');
+    }
+
+    public function detalheContato($contato){
+        $header['title'] = "Formação - Formulário - Marcelo Geremias";
+        $this->load->view('painel/header', $header);
+        $data['contato'] = $this->contato_model->detalheContato($contato);
+        $this->load->view('painel/detalheContato', $data);
+        $this->load->view('painel/footer');
+    }
+
     public function enviarContato(){
         $this->load->helper('security');
         $this->load->helper('form');

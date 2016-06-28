@@ -67,7 +67,7 @@
 														<a href="<?php echo base_url('painel/formacoes'); ?>">Formações</a>
 													</li>
 													<li>
-														<a href="<?php echo base_url('painel/contato'); ?>">Contato</a>
+														<a href="<?php echo base_url('painel/contatos'); ?>">Contato</a>
 													</li>
 													<li>
 														<a href="<?php echo base_url('sair'); ?>">Sair</a>
