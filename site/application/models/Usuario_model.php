@@ -21,5 +21,15 @@
 			$usuario = $this->UsuarioDAO->login($email, $senha);
 			return $usuario;
 		}
+
+		public function atualizar($id, $nome, $email, $descricao){
+			$usuario = $this->UsuarioDAO->atualizar($id, $nome, $email, $descricao);
+			return $usuario;
+		}
+
+		public function atualizarSenha($id, $senha){
+			$usuario = $this->UsuarioDAO->atualizarSenha($id, $senha);
+			return $usuario;
+		}
 	}
 ?>

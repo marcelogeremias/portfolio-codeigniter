@@ -9,6 +9,8 @@
 	<meta property="fb:admins" content="100002058366168"/>
 	<title><?php echo isset( $title ) ? $title : "Marcelo Geremias"; ?></title>
 
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
 	<!-- Bootstrap core CSS -->			
 	<link href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>"	rel="stylesheet">
 

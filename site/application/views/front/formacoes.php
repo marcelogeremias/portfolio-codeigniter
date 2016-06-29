@@ -2,7 +2,7 @@
 	$data_atual = strtotime("now");
 ?>
 
-	<main class="formacaos interna">
+	<main class="formacoes interna">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1">

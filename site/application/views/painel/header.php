@@ -61,6 +61,9 @@
 														<a href="<?php echo base_url('painel'); ?>">Home</a>
 													</li>
 													<li>
+														<a href="<?php echo base_url('painel/sobre'); ?>">Sobre</a>
+													</li>
+													<li>
 														<a href="<?php echo base_url('painel/trabalhos'); ?>">Trabalhos</a>
 													</li>
 													<li>

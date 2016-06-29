@@ -1,10 +1,13 @@
 		<section class="comentarios-pagina">
 			<div class="container">
 				<div class="row">
-					<div class="fb-comments" data-href="<?php echo base_url(uri_string()); ?>" data-width="100%" data-numposts="5"></div>
+					<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+						<div class="fb-comments" data-href="<?php echo base_url(uri_string()); ?>" data-width="100%" data-numposts="5"></div>
+					</div>
 				</div>
 			</div>
 		</section>
+		
 		<footer>
 			<div class="container">
 				<div class="row">

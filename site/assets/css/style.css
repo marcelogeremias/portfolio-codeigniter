@@ -1,4 +1,12 @@
 /*********************************
+	GERAL
+*********************************/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*********************************
 	CABEÇALHO
 *********************************/
 
@@ -22,7 +30,7 @@ header #header-menu {
 }
 
 header #header-menu .navbar {
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 
 header #header-menu .navbar a {
@@ -38,6 +46,10 @@ header #header-menu .navbar-nav {
 	RODAPÉ
 *********************************/
 
+.comentarios-pagina {
+	margin: 50px 0;
+}
+
 footer {
 	background: #141414;
 	color: #f49e00;
@@ -47,12 +59,16 @@ footer {
 	HOME
 *********************************/
 
-.home h2 {
+.home h1 {
 	text-align: center;
 }
 
 .home .foto-sobre {
-	max-width: 200px;
+	max-width: 300px;
 	display: block;
 	margin: 20px auto;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
 }

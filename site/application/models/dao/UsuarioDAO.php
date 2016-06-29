@@ -29,14 +29,26 @@
             return $query;
         }
 
-        function alterar($nome, $descricao, $email){
+        function atualizar($id, $nome, $email, $descricao){
             $this->load->helper('array');
             $sobre = array(
                 'usua_nm' => $nome,
                 'usua_ds' => $descricao,
                 'usua_em' => $email
             );
-            $this->db->update('lp_usuario', $sobre);
+            $this->db->where('usua_id', $id);
+            $query = $this->db->update('lp_usuario', $sobre);
+            return $query;
+        }
+
+        function atualizarSenha($id, $senha){
+            $this->load->helper('array');
+            $sobre = array(
+                'usua_sn' => 'MD5("' . $senha . '")';
+            );
+            $this->db->where('usua_id', $id);
+            $query = $this->db->update('lp_usuario', $sobre);
+            return $query;
         }
 
     }
