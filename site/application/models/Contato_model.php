@@ -12,18 +12,14 @@
         	$this->load->model('dao/ContatoDAO');
 		}
 
-    	public function inserir(){
-    		$this->load->helper('array');
-	        $nome = $this->input->post('nome');
-	        $email = $this->input->post('email');
-	        $assunto = $this->input->post('assunto');
-	        $mensagem = $this->input->post('mensagem');
-			$this->ContatoDAO->inserir($nome, $email, $assunto, $mensagem);
+    	public function inserir($nome, $email, $assunto, $mensagem){
+			$contato = $this->ContatoDAO->inserir($nome, $email, $assunto, $mensagem);
+			return $contato;
 		}
 
 		public function buscaContatos(){
-			$formacao = $this->ContatoDAO->buscaContatos();
-			return $formacao;
+			$contato = $this->ContatoDAO->buscaContatos();
+			return $contato;
 		}
 
 		public function detalheContato($contato){

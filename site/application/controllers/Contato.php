@@ -57,7 +57,24 @@ class Contato extends MY_Controller {
             $this->load->view('common/footer');
         }
         else{
-            $this->contato_model->inserir();
+            $this->load->helper('array');
+            $this->load->library('email');
+
+            $nome = $this->input->post('nome');
+            $email = $this->input->post('email');
+            $assunto = $this->input->post('assunto');
+            $mensagem = $this->input->post('mensagem');
+            $this->contato_model->inserir($nome, $email, $assunto, $mensagem);
+
+            $this->email->from("contato@marcelogeremias.com.br", "Contato do site");
+            $this->email->subject($assunto);
+            $this->email->reply_to($email);
+            $this->email->to("contato@marcelogeremias.com.br");
+            $this->email->message("Mensagem enviada por " . $nome . ": " .$mensagem);
+            $resp = $this->email->send();
+            var_dump($resp);
+            echo $this->email->print_debugger();
+
             $header['title'] = "Contato enviado - Marcelo Geremias";
             $data['confirmacao'] = "<strong>Obrigado!</strong> Sua mensagem foi enviada com sucesso.";
             $this->load->view('common/header', $header);

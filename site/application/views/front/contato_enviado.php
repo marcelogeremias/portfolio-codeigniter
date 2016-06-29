@@ -9,7 +9,7 @@
 					</div>
 				</div>
 				
-				<a href="<?php base_url(); ?>">Voltar para a página principal</a>
+				<a href="<?php echo base_url(); ?>">Voltar para a página principal</a>
 			</div>
 		</div>
 	</main>

@@ -44,7 +44,7 @@
         function atualizarSenha($id, $senha){
             $this->load->helper('array');
             $sobre = array(
-                'usua_sn' => 'MD5("' . $senha . '")';
+                'usua_sn' => 'MD5("' . $senha . '")'
             );
             $this->db->where('usua_id', $id);
             $query = $this->db->update('lp_usuario', $sobre);
