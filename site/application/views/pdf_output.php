@@ -8,8 +8,8 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 						<h1>Sobre <?php echo $usuario["usua_nm"]; ?></h1>
-						<img src="<?php echo base_url("assets/images/marcelo.jpg"); ?>" alt="Marcelo Geremias" class="foto-sobre">
-						<span><strong>E-mail: </strong><?php echo $usuario["usua_em"]; ?></span>
+						<span><b>E-mail: </b><?php echo $usuario["usua_em"]; ?></span>
+						<br>
 						<div class="descricao">
 							<?php echo $usuario["usua_ds"]; ?>
 						</div>
@@ -28,9 +28,9 @@
 						?>
 							<div class="item-formacao col-xs-12 col-sm-4">
 								<h2><?php echo $formacao['form_nm']; ?></h2>
-								<span class="instituicao"><?php echo $formacao['form_in']; ?></span>
-								<span class="tipo"><?php echo $formacao['form_tp']; ?></span>
-								<span class="dt-inicio">Início em <?php echo strftime('%B de %Y', strtotime($formacao['form_ini_dt'])); ?></span>
+								<span class="instituicao"><?php echo $formacao['form_in']; ?></span><br>
+								<span class="tipo"><?php echo $formacao['form_tp']; ?></span><br>
+								<span class="dt-inicio">Início em <?php echo strftime('%B de %Y', strtotime($formacao['form_ini_dt'])); ?></span><br>
 								<span class="dt-termino">
 									<?php 
 										echo ( $data_atual < $data_ter) ? 'Conclusão prevista para ' : 'Término em '; 

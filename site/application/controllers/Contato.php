@@ -66,14 +66,20 @@ class Contato extends MY_Controller {
             $mensagem = $this->input->post('mensagem');
             $this->contato_model->inserir($nome, $email, $assunto, $mensagem);
 
+            $html = ' 
+                <strong>Nome: </strong>'. $nome .'<br>
+                <strong>E-mail: </strong>'. $email .'<br>
+                <strong>Assunto: </strong>'. $assunto .'<br><br>
+                <strong>Mensagem: </strong>'. $mensagem .'
+            ';
+
             $this->email->from("contato@marcelogeremias.com.br", "Contato do site");
             $this->email->subject($assunto);
             $this->email->reply_to($email);
             $this->email->to("contato@marcelogeremias.com.br");
-            $this->email->message("Mensagem enviada por " . $nome . ": " .$mensagem);
+            $this->email->cc('rprado@ifsp.edu.br');
+            $this->email->message($html);
             $resp = $this->email->send();
-            var_dump($resp);
-            echo $this->email->print_debugger();
 
             $header['title'] = "Contato enviado - Marcelo Geremias";
             $data['confirmacao'] = "<strong>Obrigado!</strong> Sua mensagem foi enviada com sucesso.";

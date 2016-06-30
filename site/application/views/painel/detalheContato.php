@@ -1,3 +1,9 @@
+	<?php
+		if(!$this->session->userdata('u_id')){
+			redirect(base_url('acessar'));
+		}
+	?>
+	
 	<?php $data_inse = strtotime($contato['cont_inse_dt']); ?>
 	<main class="contatos interna">
 

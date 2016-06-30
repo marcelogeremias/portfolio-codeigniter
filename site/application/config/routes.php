@@ -67,7 +67,8 @@ $route['enviarContato'] = 'contato/enviarContato';
 $route['painel'] = 'painel/index';
 $route['acessar'] = 'painel/login';
 $route['sair'] = 'painel/logout';
-$route['atualizar-senha'] = 'painel/atualizarSenha';
+$route['recuperarSenha'] = 'usuario/recuperarSenha';
+$route['atualizarSenha'] = 'usuario/atualizarSenha';
 
 // Painel - Sobre
 $route['painel/sobre'] = 'usuario/atualizar';

@@ -11,8 +11,8 @@ class Usuario extends MY_Controller {
         $this->load->library('session');
         $this->load->model('usuario_model');
         $this->load->model('dao/UsuarioDAO');
-        $this->load->model('usuario_model');
-        $this->load->model('dao/UsuarioDAO');
+        $this->load->model('trabalho_model');
+        $this->load->model('dao/TrabalhoDAO');
         $this->load->model('formacao_model');
         $this->load->model('dao/FormacaoDAO');
     }
@@ -66,6 +66,100 @@ class Usuario extends MY_Controller {
         }
     }
 
+    public function recuperarSenha(){
+        $this->load->helper('security');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->helper('array');
+        
+        $this->form_validation->set_message('required', 'O campo %s deve ser preenchido corretamente.');
+        $this->form_validation->set_message('valid_email', 'O campo %s deve possuir um email valido.');
+
+        $this->form_validation->set_rules('email', 'e-mail', 'trim|required|valid_email|xss_clean');
+        
+        if($this->form_validation->run() === FALSE){
+            $header['title'] = "Usuário - Formulário - Marcelo Geremias";
+            $this->load->view('painel/header', $header);
+            $data['usuario'] = $this->usuario_model->buscaUsuario();
+            $this->load->view('painel/formRecuperarSenha', $data);
+            $this->load->view('painel/footer');
+        }
+        else{
+            $this->load->helper('array');
+            $this->load->library('email');
+            $email = $this->input->post('email');
+            $usuario = $this->usuario_model->buscaUsuarioEmail($email);
+            if( $usuario ) {
+                $novaSenha = mt_rand ( 100000 , 999999 );
+                $query = $this->usuario_model->atualizarSenha($usuario['usua_id'], $novaSenha);
+
+                $this->email->from("contato@marcelogeremias.com.br", "Contato do site");
+                $this->email->subject("Recuperação de senha do e-mail " . $email);
+                $this->email->to($email);
+                $this->email->cc('rprado@ifsp.edu.br');
+                $this->email->message("Nova senha: " . $novaSenha);
+                $resp = $this->email->send();
+
+                $header['title'] = 'Usuário - Confirmação de recuperação de senha - Marcelo Geremias';
+                $this->load->view('painel/header', $header);
+                $data['mensagem'] = 'Foi enviado um e-mail com instruções para recuperar senha!';
+                $this->load->view('painel/confirmacao', $data);
+                $this->load->view('painel/footer');
+            } else {
+                $header['title'] = 'Usuário - Erro de recuperação de senha - Marcelo Geremias';
+                $this->load->view('painel/header', $header);
+                $data['mensagem'] = 'O e-mail informado não existe em nosso sistema!';
+                $this->load->view('painel/erro', $data);
+                $this->load->view('painel/footer');
+            }
+        }
+    }
+
+    public function atualizarSenha(){
+        $this->load->helper('security');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->helper('array');
+        
+        $this->form_validation->set_message('required', 'O campo %s deve ser preenchido corretamente.');
+
+        $this->form_validation->set_rules('senhaAntiga', 'senha antiga', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('novaSenha', 'nova senha', 'trim|required|xss_clean');
+        
+        if($this->form_validation->run() === FALSE){
+            $header['title'] = "Usuário - Formulário - Marcelo Geremias";
+            $this->load->view('painel/header', $header);
+            $data['usuario'] = $this->usuario_model->buscaUsuario();
+            $this->load->view('painel/formAtualizarSenha', $data);
+            $this->load->view('painel/footer');
+        }
+        else{
+            $this->load->helper('array');
+            $this->load->library('email');
+            $senhaAntiga = $this->input->post('senhaAntiga');
+            $novaSenha = $this->input->post('novaSenha');
+
+            $login = $this->usuario_model->login($this->session->userdata('u_email'), $senhaAntiga);
+
+            if( $login ) {
+                $email = $this->session->userdata('u_email');
+                $query = $this->usuario_model->atualizarSenha($this->session->userdata('u_id'), $novaSenha);
+
+                $header['title'] = 'Usuário - Confirmação de recuperação de senha - Marcelo Geremias';
+                $this->load->view('painel/header', $header);
+                $data['mensagem'] = 'Senha atualizada com sucesso!';
+                $this->load->view('painel/confirmacao', $data);
+                $this->load->view('painel/footer');
+            } else {
+                $header['title'] = 'Usuário - Erro de recuperação de senha - Marcelo Geremias';
+                $this->load->view('painel/header', $header);
+                $data['mensagem'] = 'Não foi possível atualizar o sistema.';
+                $this->load->view('painel/erro', $data);
+                $this->load->view('painel/footer');
+            }
+        }
+    }
+
     public function confirmarAtualizacaoUsuario() {
         $header['title'] = 'Usuário - Confirmação de atualização - Marcelo Geremias';
         $this->load->view('painel/header', $header);
@@ -77,7 +171,7 @@ class Usuario extends MY_Controller {
     public function gerarPDF() {
         //this data will be passed on to the view
         $data['usuario'] = $this->usuario_model->buscaUsuario();
-        $data['usuarios'] = $this->usuario_model->buscaUsuarios();
+        $data['trabalhos'] = $this->trabalho_model->buscaTrabalhos();
         $data['formacoes'] = $this->formacao_model->buscaFormacoes();
          
         //load the view, pass the variable and do not show it but "save" the output into $html variable

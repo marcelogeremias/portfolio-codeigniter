@@ -1,4 +1,8 @@
 	<?php
+		if(!$this->session->userdata('u_id')){
+			redirect(base_url('acessar'));
+		}
+
 		$id = isset( $trabalho['trab_id'] ) ? $trabalho['trab_id'] : 0;
 		$nome = isset( $trabalho['trab_nm'] ) ? $trabalho['trab_nm'] : '';
 		$descricao = isset( $trabalho['trab_ds'] ) ? $trabalho['trab_ds'] : '';

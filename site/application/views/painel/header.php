@@ -14,7 +14,6 @@
 	<link href="<?php echo base_url ( 'bootstrap/css/bootstrap-theme.min.css' );?>"	rel="stylesheet">
 
 	<link href="<?php echo base_url ( 'assets/css/style.css' );?>" rel="stylesheet">
-	<link href="<?php echo base_url ( 'assets/css/painel.css' );?>" rel="stylesheet">
 
 	<script src="<?php echo base_url('assets/js/jquery/jquery.js');?>"></script>
 	<script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>	
@@ -71,6 +70,9 @@
 													</li>
 													<li>
 														<a href="<?php echo base_url('painel/contatos'); ?>">Contato</a>
+													</li>
+													<li>
+														<a href="<?php echo base_url('atualizarSenha'); ?>">Atualizar senha</a>
 													</li>
 													<li>
 														<a href="<?php echo base_url('sair'); ?>">Sair</a>

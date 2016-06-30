@@ -17,6 +17,8 @@
 	<!-- Bootstrap theme -->
 	<link href="<?php echo base_url ( 'bootstrap/css/bootstrap-theme.min.css' );?>"	rel="stylesheet">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
 	<link href="<?php echo base_url ( 'assets/css/style.css' );?>" rel="stylesheet">
 
 	<script src="<?php echo base_url('assets/js/jquery/jquery.js');?>"></script>

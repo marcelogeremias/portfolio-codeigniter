@@ -1,3 +1,8 @@
+	<?php
+		if(!$this->session->userdata('u_id')){
+			redirect(base_url('acessar'));
+		}
+	?>
 	<main class="index interna">
 		<section class="apresentacao">
 			<div class="container">

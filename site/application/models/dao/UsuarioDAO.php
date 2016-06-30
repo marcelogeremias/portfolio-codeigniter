@@ -20,6 +20,14 @@
             return $query->row_array();
         }
 
+        function buscaUsuarioEmail($email){
+            $this->db->select('usua_id, usua_nm, usua_ds, usua_em');
+            $this->db->from('lp_usuario');
+            $this->db->where('usua_em', $email);
+            $query = $this->db->get();
+            return $query->row_array();
+        }
+
         function login($email, $senha){
             $this->db->select('usua_id, usua_nm, usua_ds, usua_em');
             $this->db->from('lp_usuario');
@@ -44,7 +52,7 @@
         function atualizarSenha($id, $senha){
             $this->load->helper('array');
             $sobre = array(
-                'usua_sn' => 'MD5("' . $senha . '")'
+                'usua_sn' => md5($senha)
             );
             $this->db->where('usua_id', $id);
             $query = $this->db->update('lp_usuario', $sobre);

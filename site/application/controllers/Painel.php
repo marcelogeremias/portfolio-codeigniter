@@ -44,7 +44,7 @@ class Painel extends MY_Controller {
             $login = $this->usuario_model->login($email, $senha);
 
             if( !empty($login) ) {
-                $sessao = array('u_id' => $login['usua_id'], 'u_nome' => $login['usua_nm'], 'u_email' => $login['email']);
+                $sessao = array('u_id' => $login['usua_id'], 'u_nome' => $login['usua_nm'], 'u_email' => $login['usua_em']);
                 $this->session->set_userdata($sessao);
                 redirect(base_url('painel'));
             } else {

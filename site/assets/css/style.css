@@ -6,6 +6,20 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+a {
+	color: #141414;
+	margin: 10px auto;
+}
+
+a:hover {
+	opacity: 0.9;
+}
+
+a .fa {
+	margin-right: 5px;
+	font-size: 30px;
+}
+
 /*********************************
 	CABEÇALHO
 *********************************/
@@ -19,6 +33,10 @@ header #header-topo {
 
 header #header-topo a {
 	color: #f49e00;
+}
+
+header #header-topo a:hover {
+	text-decoration: none;
 }
 
 header #header-menu .navbar-collapse {
@@ -35,11 +53,25 @@ header #header-menu .navbar {
 
 header #header-menu .navbar a {
 	color: #141414;
+	margin: 0;
 }
 
 header #header-menu .navbar-nav {
 	float: none;
 	display: inline-block;
+}
+
+.navbar .navbar-header {
+	text-align: center;
+}
+
+.navbar .navbar-header .navbar-toggle {
+	float: none;
+}
+
+.navbar .navbar-header .navbar-toggle .icon-bar {
+	height: 3px;
+	background: #000;
 }
 
 /*********************************
@@ -53,6 +85,13 @@ header #header-menu .navbar-nav {
 footer {
 	background: #141414;
 	color: #f49e00;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 16px;
+}
+
+footer p {
+	margin-bottom: 0;
 }
 
 /*********************************
@@ -71,4 +110,16 @@ footer {
 	-moz-border-radius: 15px;
 	-o-border-radius: 15px;
 	border-radius: 15px;
+}
+
+/*********************************
+	INTERNAS
+*********************************/
+
+.interna {
+	padding: 30px 0;
+}
+
+.interna h1 {
+	text-align: center;
 }
